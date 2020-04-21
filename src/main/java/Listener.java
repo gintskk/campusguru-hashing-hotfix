@@ -54,7 +54,7 @@ public class Listener extends Thread {
                 }
             }
             // Wait 5 seconds before checking again for new notifications
-            Thread.sleep(5000);
+            Thread.sleep(60000);
         }
     }
 
