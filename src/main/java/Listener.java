@@ -45,6 +45,7 @@ public class Listener extends Thread {
             PGNotification[] notifications = postgresConn.getNotifications();
             if (notifications != null) {
                 for (PGNotification notification : notifications) {
+                    //For debugging, in production Notification Payload removed!
                     System.console().printf("Got notification %s with payload: %s at %s\n", notification.getName(), notification.getParameter(), LocalDateTime.now().toString());
                     Map<String, String> row = new ObjectMapper()
                             .readValue(notification.getParameter(),
